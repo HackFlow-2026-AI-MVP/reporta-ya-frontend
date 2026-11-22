@@ -1,0 +1,2 @@
+import {useEffect,useState} from 'react';import {service} from '../services/api';import type {Case} from '../types';
+export function useCase(id:string|undefined){const [data,setData]=useState<Case|null>(null);const [error,setError]=useState('');useEffect(()=>{if(!id)return;service.getCase(id).then(setData).catch(()=>setError('No se pudo cargar el caso. Verifica la conexión e inténtalo de nuevo.'));},[id]);return {data,error,setData};}
