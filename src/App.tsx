@@ -1,0 +1,2 @@
+import {Navigate,Route,Routes} from 'react-router-dom';import {Layout} from './components/Layout';import Home from './pages/Home';import AddEvidence from './pages/AddEvidence';import Timeline from './pages/Timeline';import Summary from './pages/Summary';
+export default function App(){return <Layout><Routes><Route path="/" element={<Home/>}/><Route path="/evidence" element={<AddEvidence/>}/><Route path="/timeline" element={<Timeline/>}/><Route path="/summary" element={<Summary/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></Layout>}
